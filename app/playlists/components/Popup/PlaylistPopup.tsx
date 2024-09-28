@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { SpotifyUser } from "@/assets/interfaces";
+import { SpotifyPlaylist, SpotifyUser } from "@/assets/interfaces";
 import styles from "./PlaylistPopup.module.css";
 import Image from "next/image";
 import placeholder from "@/assets/images/placeholder.jpg";
@@ -22,7 +22,7 @@ const PlaylistPopup: React.FC<PlaylistPopupProps> = ({ user }) => {
     (state: RootState) => state.playlists
   );
   const usersPlaylists = playlists?.filter(
-    (playlist) =>
+    (playlist: SpotifyPlaylist) =>
       playlist.owner.id === user.id && playlist.id !== selectedPlaylist?.id
   );
 
@@ -44,7 +44,7 @@ const PlaylistPopup: React.FC<PlaylistPopupProps> = ({ user }) => {
         <div className={styles.playlists}>
           {usersPlaylists &&
             usersPlaylists.length > 0 &&
-            usersPlaylists.map((playlist) => (
+            usersPlaylists.map((playlist: SpotifyPlaylist) => (
               <div
                 key={"Dropdown" + playlist.id}
                 className={`${styles.playlist}`}
