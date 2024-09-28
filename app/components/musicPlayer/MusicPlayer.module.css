@@ -124,6 +124,10 @@
   transition: width 0.3s ease;
 }
 
+.openSpotify {
+  font-size: var(--font-size-ms);
+}
+
 @media only screen and (max-width: 850px) {
   .volume {
     width: 100px;

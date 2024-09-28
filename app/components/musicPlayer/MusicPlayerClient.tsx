@@ -261,7 +261,7 @@ const MusicPlayerClient = () => {
           </div>
         </>
       ) : (
-        <button onClick={handleSpotifyOpen}>
+        <button onClick={handleSpotifyOpen} className={styles.openSpotify}>
           {isFetching
             ? "Fetching Player Data..."
             : "Open Spotify & start playing a song then refresh"}
