@@ -1,17 +1,17 @@
 import React from "react";
 import styles from "../TrackListHeader.module.css";
-import SearchIcon from "@/assets/icons/SearchIcon";
-import SortIcon from "@/assets/icons/SortIcon";
-import ArrowUpIcon from "@/assets/icons/ArrowUpIcon";
-import ArrowDownIcon from "@/assets/icons/ArrowDownIcon";
+import SearchIcon from "../../../../../assets/icons/SearchIcon";
+import SortIcon from "../../../../../assets/icons/SortIcon";
+import ArrowUpIcon from "../../../../../assets/icons/ArrowUpIcon";
+import ArrowDownIcon from "../../../../../assets/icons/ArrowDownIcon";
 import { useSelector, useDispatch } from "react-redux";
-import { RootState, AppDispatch } from "@/store";
+import { RootState, AppDispatch } from "../../../../../store";
 import {
   setSelectedGenre,
   setSearchTerm,
   setSortBy,
   setSortAscending,
-} from "@/redux/playlistSlice";
+} from "../../../../../redux/playlistSlice";
 
 // Helper function to capitalize the first letter of a string
 const capitalizeFirstLetter = (string: string) => {
@@ -43,7 +43,9 @@ const FilterOptions = () => {
   };
   // Sort genres alphabetically and capitalize the first letter
   const sortedGenres = genres
-    .filter((genre) => genre.toLowerCase() !== selectedGenre?.toLowerCase()) // Exclude the currently selected genre
+    .filter(
+      (genre: string) => genre.toLowerCase() !== selectedGenre?.toLowerCase()
+    ) // Exclude the currently selected genre
     .sort()
     .map(capitalizeFirstLetter);
 
@@ -134,7 +136,7 @@ const FilterOptions = () => {
                     </p>
                   </div>
                 ) : null}
-                {sortedGenres.map((genre) => (
+                {sortedGenres.map((genre: string) => (
                   <div
                     key={genre}
                     className={styles.dropdownItem}

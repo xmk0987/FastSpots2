@@ -2,9 +2,9 @@
 
 import React, { useState, useEffect } from "react";
 import styles from "./TrackListHeader.module.css";
-import { SpotifyUser } from "@/assets/interfaces";
+import { SpotifyUser } from "../../../../assets/interfaces";
 import { useSelector } from "react-redux";
-import { RootState } from "@/store";
+import { RootState } from "../../../../store";
 import FilterOptions from "./components/FilterOptions";
 import PlaylistOptions from "./components/PlaylistOptions";
 

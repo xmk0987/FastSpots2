@@ -3,10 +3,10 @@
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import styles from "./PlaylistHeader.module.css";
-import placeholder from "@/assets/images/placeholder.jpg";
+import placeholder from "../../../../assets/images/placeholder.jpg";
 import { useSelector, useDispatch } from "react-redux";
-import { RootState, AppDispatch } from "@/store";
-import EditIcon from "@/assets/icons/EditIcon";
+import { RootState, AppDispatch } from "../../../../store";
+import EditIcon from "../../../../assets/icons/EditIcon";
 import { updatePlaylistDetails } from "../../../../redux/playlistSlice";
 
 const PlaylistHeader = () => {

@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { RootState, AppDispatch } from "@/store";
+import { RootState, AppDispatch } from "../../../store";
 import {
   fetchPlayer,
   controlPlayer,
@@ -14,15 +14,16 @@ import {
 } from "../../../redux/musicPlayerSlice";
 import styles from "./MusicPlayer.module.css";
 import Image from "next/image";
-import PlayIcon from "@/assets/icons/PlayIcon";
-import StopIcon from "@/assets/icons/StopIcon";
-import SkipNextIcon from "@/assets/icons/SkipNextIcon";
-import SkipPreviousIcon from "@/assets/icons/SkipPreviousIcon";
-import ShuffleIcon from "@/assets/icons/ShuffleIcon";
-import ShuffleOnIcon from "@/assets/icons/ShuffleOnIcon";
-import RepeatIcon from "@/assets/icons/RepeatIcon";
-import VolumeIcon from "@/assets/icons/VolumeIcon";
-import MuteIcon from "@/assets/icons/MuteIcon";
+import PlayIcon from "../../../assets/icons/PlayIcon";
+import StopIcon from "../../../assets/icons/StopIcon";
+import SkipNextIcon from "../../../assets/icons/SkipNextIcon";
+import SkipPreviousIcon from "../../../assets/icons/SkipPreviousIcon";
+import ShuffleIcon from "../../../assets/icons/ShuffleIcon";
+import ShuffleOnIcon from "../../../assets/icons/ShuffleOnIcon";
+import RepeatIcon from "../../../assets/icons/RepeatIcon";
+import VolumeIcon from "../../../assets/icons/VolumeIcon";
+import MuteIcon from "../../../assets/icons/MuteIcon";
+import { SpotifyPlaylistTrack } from "../../../assets/interfaces";
 
 const MusicPlayerClient = () => {
   const dispatch: AppDispatch = useDispatch();
@@ -136,7 +137,7 @@ const MusicPlayerClient = () => {
       !playerData.shuffle_state
     ) {
       const currentIndex = sortedTracks.findIndex(
-        (track) => track.track.uri === playerData.item.uri
+        (track: SpotifyPlaylistTrack) => track.track.uri === playerData.item.uri
       );
       const nextIndex = (currentIndex + 1) % sortedTracks.length;
       const nextTrackURI = sortedTracks[nextIndex]?.track.uri;
@@ -164,7 +165,7 @@ const MusicPlayerClient = () => {
     ) {
       console.log("inside");
       const currentIndex = sortedTracks.findIndex(
-        (track) => track.track.uri === playerData.item.uri
+        (track: SpotifyPlaylistTrack) => track.track.uri === playerData.item.uri
       );
       const previousIndex =
         (currentIndex - 1 + sortedTracks.length) % sortedTracks.length;

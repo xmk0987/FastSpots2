@@ -2,23 +2,22 @@
 
 import React, { useEffect, useState } from "react";
 import styles from "./Sidebar.module.css";
-import { SpotifyPlaylist } from "@/assets/interfaces";
 import Image from "next/image";
-import SearchIcon from "@/assets/icons/SearchIcon";
-import SortIcon from "@/assets/icons/SortIcon";
-import ArrowDownIcon from "@/assets/icons/ArrowDownIcon";
-import ArrowUpIcon from "@/assets/icons/ArrowUpIcon";
-import placeholder from "@/assets/images/placeholder.jpg";
+import SearchIcon from "../../../../assets/icons/SearchIcon";
+import SortIcon from "../../../../assets/icons/SortIcon";
+import ArrowDownIcon from "../../../../assets/icons/ArrowDownIcon";
+import ArrowUpIcon from "../../../../assets/icons/ArrowUpIcon";
+import placeholder from "../../../../assets/images/placeholder.jpg";
 import { useSelector, useDispatch } from "react-redux";
-import { RootState, AppDispatch } from "@/store";
+import { RootState, AppDispatch } from "../../../../store";
 import {
   selectPlaylistAndFetchTracks,
   toggleSidebar,
 } from "../../../../redux/playlistSlice";
-import AddIcon from "@/assets/icons/AddIcon";
-import { SpotifyUser } from "@/assets/interfaces";
-import MenuIcon from "@/assets/icons/MenuIcon";
-import CreatePlaylist from "@/app/components/CreatePlaylist/CreatePlaylist";
+import AddIcon from "../../../../assets/icons/AddIcon";
+import { SpotifyUser, SpotifyPlaylist } from "../../../../assets/interfaces";
+import MenuIcon from "../../../../assets/icons/MenuIcon";
+import CreatePlaylist from "../../../../app/components/CreatePlaylist/CreatePlaylist";
 
 interface SidebarProps {
   user: SpotifyUser;
@@ -39,18 +38,20 @@ const Sidebar: React.FC<SidebarProps> = ({ user }) => {
 
   useEffect(() => {
     if (playlists && playlists.length > 0) {
-      const filteredPlaylists = playlists.filter((playlist) =>
+      const filteredPlaylists = playlists.filter((playlist: SpotifyPlaylist) =>
         playlist.name.toLowerCase().includes(searchTerm.toLowerCase())
       );
 
       // Sort playlists by name
-      const sortedPlaylists = filteredPlaylists.sort((a, b) => {
-        if (sortAscending) {
-          return a.name.localeCompare(b.name);
-        } else {
-          return b.name.localeCompare(a.name);
+      const sortedPlaylists = filteredPlaylists.sort(
+        (a: SpotifyPlaylist, b: SpotifyPlaylist) => {
+          if (sortAscending) {
+            return a.name.localeCompare(b.name);
+          } else {
+            return b.name.localeCompare(a.name);
+          }
         }
-      });
+      );
 
       setSortedPlaylist(sortedPlaylists);
     }

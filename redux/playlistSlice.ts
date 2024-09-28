@@ -1,5 +1,5 @@
 import { createSlice, createAsyncThunk, PayloadAction } from "@reduxjs/toolkit";
-import { SpotifyPlaylist, SpotifyPlaylistTrack } from "@/assets/interfaces";
+import { SpotifyPlaylist, SpotifyPlaylistTrack } from "../assets/interfaces";
 
 interface PlaylistsState {
   playlists: SpotifyPlaylist[];
@@ -520,7 +520,7 @@ export const {
   setSortBy,
   setSortAscending,
   setSelectedGenre,
-  toggleSidebar
+  toggleSidebar,
 } = playlistsSlice.actions;
 
 export default playlistsSlice.reducer;

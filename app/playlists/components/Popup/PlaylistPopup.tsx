@@ -1,11 +1,11 @@
 "use client";
 import React from "react";
-import { SpotifyPlaylist, SpotifyUser } from "@/assets/interfaces";
+import { SpotifyPlaylist, SpotifyUser } from "../../../../assets/interfaces";
 import styles from "./PlaylistPopup.module.css";
 import Image from "next/image";
-import placeholder from "@/assets/images/placeholder.jpg";
+import placeholder from "../../../../assets/images/placeholder.jpg";
 import { useSelector, useDispatch } from "react-redux";
-import { RootState, AppDispatch } from "@/store";
+import { RootState, AppDispatch } from "../../../../store";
 import {
   addTracksToPlaylist,
   setConfirmPopup,

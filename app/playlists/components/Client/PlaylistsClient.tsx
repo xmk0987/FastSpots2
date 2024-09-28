@@ -7,10 +7,10 @@ import TrackList from "../Tracklist/TrackList";
 import PlaylistPopup from "../Popup/PlaylistPopup";
 import ConfirmationModal from "../Confirmation/ConfirmationModal";
 import { useSelector, useDispatch } from "react-redux";
-import { RootState, AppDispatch } from "@/store";
+import { RootState, AppDispatch } from "../../../../store"
 import { setNotificationMessage } from "../../../../redux/playlistSlice";
 import { fetchPlaylists } from "../../../../redux/playlistSlice";
-import { PageProps } from "@/assets/interfaces";
+import { PageProps } from "../../../..//assets/interfaces";
 import TrackListHeader from "../TracklistHeader/TrackListHeader";
 
 const PlaylistsClient: React.FC<PageProps> = ({ user }) => {

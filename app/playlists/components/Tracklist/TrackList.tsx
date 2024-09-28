@@ -2,21 +2,24 @@
 import React, { useEffect, useState, useRef, useCallback } from "react";
 import styles from "./TrackList.module.css";
 import Image from "next/image";
-import PlayIcon from "@/assets/icons/PlayIcon";
-import RemoveIcon from "@/assets/icons/RemoveIcon";
-import CheckedBoxIcon from "@/assets/icons/CheckedBoxIcon";
-import CheckBoxEmptyIcon from "@/assets/icons/CheckBoxEmptyIcon";
-import { SpotifyUser } from "@/assets/interfaces";
+import PlayIcon from "../../../../assets/icons/PlayIcon";
+import RemoveIcon from "../../../../assets/icons/RemoveIcon";
+import CheckedBoxIcon from "../../../../assets/icons/CheckedBoxIcon";
+import CheckBoxEmptyIcon from "../../../../assets/icons/CheckBoxEmptyIcon";
+import {
+  SpotifyPlaylistTrack,
+  SpotifyUser,
+} from "../../../../assets/interfaces";
 import { useSelector, useDispatch } from "react-redux";
-import { RootState, AppDispatch } from "@/store";
+import { RootState, AppDispatch } from "../../../../store";
 import {
   deleteTracksFromPlaylist,
   fetchPlaylistTracks,
   selectPlaylistAndFetchTracks,
   setSelectedTracks,
 } from "../../../../redux/playlistSlice";
-import { playSongByURI } from "@/redux/musicPlayerSlice";
-import NoteIcon from "@/assets/icons/NoteIcon";
+import { playSongByURI } from "../../../../redux/musicPlayerSlice";
+import NoteIcon from "../../../../assets/icons/NoteIcon";
 
 interface TrackListProps {
   user: SpotifyUser;
@@ -84,7 +87,7 @@ const TrackList: React.FC<TrackListProps> = ({ user }) => {
 
   const toggleTrackSelection = (trackURI: string) => {
     const updatedSelectedTracks = selectedTracks.includes(trackURI)
-      ? selectedTracks.filter((track) => track !== trackURI)
+      ? selectedTracks.filter((track: string) => track !== trackURI)
       : [...selectedTracks, trackURI];
 
     dispatch(setSelectedTracks(updatedSelectedTracks));
@@ -120,7 +123,7 @@ const TrackList: React.FC<TrackListProps> = ({ user }) => {
 
   return (
     <div className={styles.tracks}>
-      {sortedTracks?.map((track, index) => {
+      {sortedTracks?.map((track: SpotifyPlaylistTrack, index: number) => {
         if (sortedTracks.length === index + 1) {
           return (
             <div

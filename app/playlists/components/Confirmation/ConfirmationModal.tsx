@@ -3,7 +3,7 @@
 import React from "react";
 import styles from "./ConfirmationModal.module.css";
 import { useSelector, useDispatch } from "react-redux";
-import { RootState, AppDispatch } from "@/store";
+import { RootState, AppDispatch } from "../../../../store";
 import {
   deleteTracksFromPlaylist,
   setConfirmDelete,
