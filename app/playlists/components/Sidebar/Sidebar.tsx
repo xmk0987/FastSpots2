@@ -3,21 +3,21 @@
 import React, { useEffect, useState } from "react";
 import styles from "./Sidebar.module.css";
 import Image from "next/image";
-import SearchIcon from "../../../../assets/icons/SearchIcon";
-import SortIcon from "../../../../assets/icons/SortIcon";
-import ArrowDownIcon from "../../../../assets/icons/ArrowDownIcon";
-import ArrowUpIcon from "../../../../assets/icons/ArrowUpIcon";
-import placeholder from "../../../../assets/images/placeholder.jpg";
+import SearchIcon from "@/assets/icons/SearchIcon";
+import SortIcon from "@/assets/icons/SortIcon";
+import ArrowDownIcon from "@/assets/icons/ArrowDownIcon";
+import ArrowUpIcon from "@/assets/icons/ArrowUpIcon";
+import placeholder from "@/assets/images/placeholder.jpg";
 import { useSelector, useDispatch } from "react-redux";
-import { RootState, AppDispatch } from "../../../../store";
+import { RootState, AppDispatch } from "@/store";
 import {
   selectPlaylistAndFetchTracks,
   toggleSidebar,
-} from "../../../../redux/playlistSlice";
-import AddIcon from "../../../../assets/icons/AddIcon";
-import { SpotifyUser, SpotifyPlaylist } from "../../../../assets/interfaces";
-import MenuIcon from "../../../../assets/icons/MenuIcon";
-import CreatePlaylist from "../../../components/CreatePlaylist/CreatePlaylist";
+} from "@/redux/playlistSlice";
+import AddIcon from "@/assets/icons/AddIcon";
+import { SpotifyUser, SpotifyPlaylist } from "@/assets/interfaces";
+import MenuIcon from "@/assets/icons/MenuIcon";
+import CreatePlaylist from "@/components/CreatePlaylist/CreatePlaylist";
 
 interface SidebarProps {
   user: SpotifyUser;

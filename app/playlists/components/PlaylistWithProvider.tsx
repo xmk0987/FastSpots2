@@ -2,9 +2,9 @@
 
 import React from "react";
 import { Provider } from "react-redux";
-import { store } from "../../../store";
+import { store } from "@/store";
 import PlaylistsClient from "./Client/PlaylistsClient";
-import { SpotifyUser } from "../../../assets/interfaces";
+import { SpotifyUser } from "@/assets/interfaces";
 
 const PlaylistsWithProvider: React.FC<{ user: SpotifyUser }> = ({ user }) => {
   return (

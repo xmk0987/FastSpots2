@@ -2,15 +2,15 @@
 
 import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { RootState, AppDispatch } from "../../store";
+import { RootState, AppDispatch } from "@/store";
 import styles from "./Toplists.module.css";
 import { getImageBrightness } from "./helpers/imageBrightness";
 import Image from "next/image";
-import { SpotifyArtist, SpotifyTrack } from "../../assets/interfaces";
-import placeholder from "../../assets/images/placeholder.jpg";
-import PlayIcon from "../../assets/icons/PlayIcon";
-import { playSongByURI } from "../../redux/musicPlayerSlice";
-import NoteIcon from "../../assets/icons/NoteIcon";
+import { SpotifyArtist, SpotifyTrack } from "@/assets/interfaces";
+import placeholder from "@/assets/images/placeholder.jpg";
+import PlayIcon from "@/assets/icons/PlayIcon";
+import { playSongByURI } from "@/redux/musicPlayerSlice";
+import NoteIcon from "@/assets/icons/NoteIcon";
 
 interface ToplistsClientProps {
   initialTopTracks: SpotifyTrack[];

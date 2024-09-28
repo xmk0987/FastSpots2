@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { RootState, AppDispatch } from "../../../store";
+import { RootState, AppDispatch } from "@/store";
 import {
   fetchPlayer,
   controlPlayer,
@@ -11,19 +11,19 @@ import {
   setProgress,
   setPreviousVolume,
   playSongByURI,
-} from "../../../redux/musicPlayerSlice";
+} from "@/redux/musicPlayerSlice";
 import styles from "./MusicPlayer.module.css";
 import Image from "next/image";
-import PlayIcon from "../../../assets/icons/PlayIcon";
-import StopIcon from "../../../assets/icons/StopIcon";
-import SkipNextIcon from "../../../assets/icons/SkipNextIcon";
-import SkipPreviousIcon from "../../../assets/icons/SkipPreviousIcon";
-import ShuffleIcon from "../../../assets/icons/ShuffleIcon";
-import ShuffleOnIcon from "../../../assets/icons/ShuffleOnIcon";
-import RepeatIcon from "../../../assets/icons/RepeatIcon";
-import VolumeIcon from "../../../assets/icons/VolumeIcon";
-import MuteIcon from "../../../assets/icons/MuteIcon";
-import { SpotifyPlaylistTrack } from "../../../assets/interfaces";
+import PlayIcon from "@/assets/icons/PlayIcon";
+import StopIcon from "@/assets/icons/StopIcon";
+import SkipNextIcon from "@/assets/icons/SkipNextIcon";
+import SkipPreviousIcon from "@/assets/icons/SkipPreviousIcon";
+import ShuffleIcon from "@/assets/icons/ShuffleIcon";
+import ShuffleOnIcon from "@/assets/icons/ShuffleOnIcon";
+import RepeatIcon from "@/assets/icons/RepeatIcon";
+import VolumeIcon from "@/assets/icons/VolumeIcon";
+import MuteIcon from "@/assets/icons/MuteIcon";
+import { SpotifyPlaylistTrack } from "@/assets/interfaces";
 
 const MusicPlayerClient = () => {
   const dispatch: AppDispatch = useDispatch();

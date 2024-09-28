@@ -3,11 +3,11 @@
 import React from "react";
 import styles from "./ConfirmationModal.module.css";
 import { useSelector, useDispatch } from "react-redux";
-import { RootState, AppDispatch } from "../../../../store";
+import { RootState, AppDispatch } from "@/store";
 import {
   deleteTracksFromPlaylist,
   setConfirmDelete,
-} from "../../../../redux/playlistSlice";
+} from "@/redux/playlistSlice";
 
 const ConfirmationModal = () => {
   const dispatch: AppDispatch = useDispatch(); // Typed dispatch

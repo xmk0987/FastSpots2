@@ -2,24 +2,21 @@
 import React, { useEffect, useState, useRef, useCallback } from "react";
 import styles from "./TrackList.module.css";
 import Image from "next/image";
-import PlayIcon from "../../../../assets/icons/PlayIcon";
-import RemoveIcon from "../../../../assets/icons/RemoveIcon";
-import CheckedBoxIcon from "../../../../assets/icons/CheckedBoxIcon";
-import CheckBoxEmptyIcon from "../../../../assets/icons/CheckBoxEmptyIcon";
-import {
-  SpotifyPlaylistTrack,
-  SpotifyUser,
-} from "../../../../assets/interfaces";
+import PlayIcon from "@/assets/icons/PlayIcon";
+import RemoveIcon from "@/assets/icons/RemoveIcon";
+import CheckedBoxIcon from "@/assets/icons/CheckedBoxIcon";
+import CheckBoxEmptyIcon from "@/assets/icons/CheckBoxEmptyIcon";
+import { SpotifyPlaylistTrack, SpotifyUser } from "@/assets/interfaces";
 import { useSelector, useDispatch } from "react-redux";
-import { RootState, AppDispatch } from "../../../../store";
+import { RootState, AppDispatch } from "@/store";
 import {
   deleteTracksFromPlaylist,
   fetchPlaylistTracks,
   selectPlaylistAndFetchTracks,
   setSelectedTracks,
-} from "../../../../redux/playlistSlice";
-import { playSongByURI } from "../../../../redux/musicPlayerSlice";
-import NoteIcon from "../../../../assets/icons/NoteIcon";
+} from "@/redux/playlistSlice";
+import { playSongByURI } from "@/redux/musicPlayerSlice";
+import NoteIcon from "@/assets/icons/NoteIcon";
 
 interface TrackListProps {
   user: SpotifyUser;

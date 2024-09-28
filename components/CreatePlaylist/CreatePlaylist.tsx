@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import styles from "./CreatePlaylist.module.css";
 import { useDispatch } from "react-redux";
-import { AppDispatch } from "../../../store";
-import { createPlaylist } from "../../../redux/playlistSlice";
-import { SpotifyUser } from "../../../assets/interfaces";
+import { AppDispatch } from "@/store";
+import { createPlaylist } from "@/redux/playlistSlice";
+import { SpotifyUser } from "@/assets/interfaces";
 
 interface CreatePlaylistProps {
   showCreatePlaylist: boolean;

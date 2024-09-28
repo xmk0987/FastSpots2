@@ -2,9 +2,9 @@
 
 import React from "react";
 import { Provider } from "react-redux";
-import { store } from "../../store";
+import { store } from "@/store";
 import ToplistsClient from "./ToplistsClient";
-import { SpotifyArtist, SpotifyTrack } from "../../assets/interfaces";
+import { SpotifyArtist, SpotifyTrack } from "@/assets/interfaces";
 
 interface ToplistsClientProps {
   initialTopTracks: SpotifyTrack[];
