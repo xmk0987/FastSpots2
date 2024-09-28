@@ -1,8 +1,8 @@
 import React from "react";
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
-import Navbar from "../components/navbar/Navbar";
-import MusicPlayer from "../components/musicPlayer/MusicPlayer";
+import Navbar from "../components/Navbar/Navbar";
+import MusicPlayer from "../components/MusicPlayer/MusicPlayer";
 import { fetchUser } from "@/api/user/user";
 import PlaylistsWithProvider from "./components/PlaylistWithProvider";
 
