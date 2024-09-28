@@ -1,5 +1,5 @@
-import AuthorizeButton from "./components/Auth_temp/AuthorizeButton";
-import Navbar from "./components/nav_temp/Navbar";
+import AuthorizeButton from "./components/AuthorizeButton/AuthorizeButton";
+import Navbar from "./components/Navbar/Navbar";
 import styles from "./Home.module.css";
 
 export default function Home() {

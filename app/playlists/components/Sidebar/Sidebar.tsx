@@ -17,7 +17,7 @@ import {
 import AddIcon from "../../../../assets/icons/AddIcon";
 import { SpotifyUser, SpotifyPlaylist } from "../../../../assets/interfaces";
 import MenuIcon from "../../../../assets/icons/MenuIcon";
-import CreatePlaylist from "../../../components/Playlist_temp/CreatePlaylist";
+import CreatePlaylist from "../../../components/CreatePlaylist/CreatePlaylist";
 
 interface SidebarProps {
   user: SpotifyUser;
