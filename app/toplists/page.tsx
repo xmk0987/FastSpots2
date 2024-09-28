@@ -1,10 +1,10 @@
 // app/toplists/page.tsx (Server Component)
 import React from "react";
-import Navbar from "../components/Navbar/Navbar";
+import Navbar from "../components/nav_temp/Navbar";
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 import { fetchTopArtists, fetchTopTracks } from "../../api/toplists/toplists";
-import MusicPlayer from "../components/MusicPlayer/MusicPlayer";
+import MusicPlayer from "../components/music_temp/MusicPlayer";
 import { SpotifyArtist, SpotifyTrack } from "../../assets/interfaces";
 import TopListsWithProvider from "./ToplistsWithProvider";
 
