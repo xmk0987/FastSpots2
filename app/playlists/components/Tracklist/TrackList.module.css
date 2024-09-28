@@ -1,0 +1,145 @@
+.tracks {
+  flex-grow: 1;
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  position: relative;
+}
+
+.track {
+  min-height: 50px;
+  width: 100%;
+  height: 50px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 10px;
+  cursor: default;
+}
+
+.track:hover {
+  background-color: var(--hover-grey);
+  cursor: default;
+}
+
+.trackImage {
+  width: 40px;
+  height: 40px;
+  border-radius: 5px;
+  position: relative;
+  overflow: hidden;
+}
+
+.trackPosition {
+  min-width: 40px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.trackInfo {
+  flex-grow: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.trackNameArtist {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 200px;
+}
+
+.trackNameArtist p {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  flex-grow: 1;
+}
+
+.trackNameArtist p:nth-of-type(2) {
+  font-size: var(--font-size-ms);
+}
+
+.trackOptions {
+  display: inline-flex;
+  gap: 20px;
+  justify-content: space-around;
+  margin-left: 40px;
+  min-width: 80px;
+}
+
+.trackOptions button {
+  position: relative;
+}
+
+@media only screen and (max-width: 550px) {
+  .tracks {
+    flex-grow: 1;
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    position: relative;
+  }
+
+  .track {
+    padding: 0;
+  }
+
+  .trackImage {
+    display: none !important;
+  }
+
+  .trackPosition {
+    min-width: 30px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-size: var(--font-size-s);
+  }
+
+  .trackNameArtist {
+    font-size: var(--font-size-ms);
+  }
+
+  .trackNameArtist p:nth-of-type(2) {
+    font-size: var(--font-size-s);
+  }
+
+  .trackLength {
+    font-size: var(--font-size-s);
+  }
+
+  .trackOptions {
+    display: inline-flex;
+    gap: 10px;
+    justify-content: space-around;
+    margin-left: 0;
+  }
+}
+
+@media only screen and (max-width: 435px) {
+  .trackLength {
+    display: none;
+  }
+
+  .trackNameArtist {
+    max-width: 200px;
+  }
+}
+
+@media only screen and (max-width: 435px) {
+  .trackNameArtist {
+    max-width: 150px;
+  }
+
+  .trackOptions {
+    gap: 5px;
+    min-width: 60px;
+  }
+}

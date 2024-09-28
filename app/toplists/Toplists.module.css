@@ -1,0 +1,231 @@
+.container {
+  display: inline-flex;
+  overflow: hidden;
+}
+
+.container section {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.listContainer {
+  width: 500px;
+  height: 500px;
+  background-color: black;
+  border-radius: 10px;
+  max-width: 100%;
+  max-height: 95%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  overflow: scroll;
+  justify-content: center;
+
+  gap: 5px;
+}
+
+.listHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.listOptions {
+  width: 100%;
+  display: inline-flex;
+  gap: 30px;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.listOption {
+  display: inline-flex;
+}
+
+.listOption label {
+  padding: 0 5px;
+  font-size: var(--font-size-s);
+}
+
+.listOption select {
+  width: 100px;
+  font-size: var(--font-size-s);
+}
+
+.listHeader h3 {
+  display: inline-block;
+  font-size: var(--font-size-m);
+}
+
+.dark {
+  background-color: var(--dark-mask);
+  color: white;
+}
+
+.dark .listHeader h3 {
+  border-bottom: 1px solid white;
+}
+
+.dark select {
+  background-color: white;
+  color: black;
+}
+
+.light select {
+  background-color: rgb(117, 117, 117);
+  color: white;
+}
+
+.light {
+  background-color: var(--light-mask);
+  color: black;
+}
+
+.light .listHeader h3 {
+  border-bottom: 1px solid black;
+}
+
+.list {
+  flex-grow: 1;
+  overflow: scroll;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 10px;
+}
+
+.listItem {
+  width: 100%;
+  min-height: 50px;
+  max-height: 50px;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  overflow: hidden;
+}
+
+.listItemPosition {
+  min-width: 30px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.listItemPosition p {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.listItemTrack:hover {
+  background-color: var(--hover-grey);
+  cursor: default;
+}
+
+.listItemImage {
+  min-width: 40px;
+  min-height: 40px;
+  border-radius: 5px;
+  overflow: hidden;
+  position: relative;
+}
+
+.trackInfo {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.trackInfo p {
+  flex-grow: 1;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.trackInfo p:nth-of-type(1) {
+  font-size: var(--font-size-ms);
+}
+
+.trackInfo p:nth-of-type(2) {
+  font-size: var(--font-size-s);
+}
+
+@media only screen and (max-width: 950px) {
+  .listHeader {
+    width: 100%;
+  }
+  .list {
+    font-size: var(--font-size-ms);
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    overflow: scroll;
+  }
+
+  .container section {
+    height: 100%;
+    flex: none;
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  .listContainer {
+    border-radius: 0;
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  .listContainer {
+    max-height: 100%;
+  }
+}
+
+@media only screen and (max-width: 470px) {
+  .listItem {
+    gap: 5px;
+  }
+  .listContainer {
+    padding: 10px;
+  }
+  .listOption label {
+    padding: 0 5px;
+    font-size: var(--font-size-s);
+  }
+
+  .listOption select {
+    width: auto;
+    font-size: var(--font-size-s);
+  }
+
+  .listItemPosition {
+    min-width: 20px;
+  }
+}
+
+@media only screen and (max-width: 350px) {
+  .listItemImage {
+    min-width: 30px;
+    min-height: 30px;
+  }
+
+  .listOptions {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    align-items: flex-end;
+  }
+}

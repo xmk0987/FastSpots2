@@ -1,0 +1,165 @@
+.tracksHeader {
+  display: inline-flex;
+  width: 100%;
+  padding: 0 10px;
+  background: var(--linear);
+  justify-content: space-between;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  align-items: center;
+  border-radius: 5px;
+  min-height: 30px;
+  z-index: 10;
+  position: relative;
+}
+
+.tracksFilterOptions {
+  display: inline-flex;
+  gap: 15px;
+  align-items: center;
+  height: 100%;
+}
+
+.searchWrapper {
+  width: 15px;
+  height: 100%;
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  transition: 400ms ease-in-out;
+  border-radius: 5px;
+}
+
+.searchWrapper input {
+  position: absolute;
+  border-radius: 5px;
+  top: 50%;
+  left: 0;
+  width: 0;
+  height: 70%;
+  padding: 10px 5px;
+  margin-left: 20px;
+  transform: translate(0, -50%);
+  outline: none;
+  border: none;
+  font-size: var(--font-size-s);
+  background-color: transparent;
+  color: white;
+  overflow: hidden;
+  transition: 400ms ease-in-out;
+  border: 1px solid white;
+}
+
+.searchWrapper:hover {
+  width: 120px;
+}
+
+.searchWrapper:hover input {
+  width: 100px;
+}
+
+.dropdown {
+  float: left;
+  overflow: hidden;
+  font-size: var(--font-size-ms);
+}
+
+.dropdownContent {
+  display: none;
+  position: absolute;
+  background-color: var(--popup-bg);
+  padding: 10px;
+  width: 130px;
+  z-index: 1;
+  font-size: var(--font-size-s);
+  border-radius: 5px;
+  overflow: scroll;
+  max-height: 130px;
+}
+
+.dropdown:hover .dropdownContent {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.dropdownContent div {
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 25px;
+  padding: 0 5px;
+}
+
+.dropdownContent div:hover {
+  background-color: var(--hover-grey);
+  cursor: pointer;
+}
+
+.tracksFilterOptions h3 {
+  font-size: var(--font-size-m);
+}
+
+.notification {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: var(--linear);
+  z-index: 800;
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.playlistOptions {
+  display: inline-flex;
+  gap: 15px;
+  justify-content: flex-end;
+  align-items: center;
+  position: relative;
+  height: 100%;
+}
+
+.playlistOption {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.confirmPopup {
+  padding: 20px;
+  position: absolute;
+  z-index: 10;
+}
+
+.deselect {
+  padding: 0 10px;
+  border-radius: 5px;
+  font-size: var(--font-size-ms);
+  border: 1px solid white;
+}
+
+@media only screen and (max-width: 500px) {
+  .tracksFilterOptions {
+    width: 100%;
+  }
+  .playlistOptions {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  /* Hide the dropdowns when the searchWrapper is hovered */
+  .searchWrapper:hover + .dropdown,
+  .searchWrapper:hover ~ .dropdown {
+    display: none !important;
+  }
+}

@@ -1,0 +1,26 @@
+.homeContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.homeHeader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.homeHeader span {
+  height: 1px;
+  width: 100%;
+  background-color: white;
+}
+
+.homeContainer p {
+  width: 350px;
+  max-width: 90%;
+  text-align: center;
+}

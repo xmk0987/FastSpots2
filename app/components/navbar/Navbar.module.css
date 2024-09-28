@@ -1,0 +1,26 @@
+.navbarContainer {
+  width: 100%;
+  min-height: var(--navbar-height);
+  background:var(--linear);
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 10px;
+}
+
+.navbarContainer ul {
+  display: inline-flex;
+  gap: 20px;
+  font-size: 12px;
+  text-decoration: none; /* No underline by default */
+  color: white;
+  padding-bottom: 5px;
+}
+
+.navbarContainer ul li a:hover {
+  border-bottom: 1px solid white; /* Underline effect for the active link */
+}
+
+.activeLink {
+  border-bottom: 1px solid var(--accent-color); /* Underline effect for the active link */
+}

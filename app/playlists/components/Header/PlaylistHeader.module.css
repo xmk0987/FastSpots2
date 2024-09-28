@@ -1,0 +1,160 @@
+.playlistHeader {
+  width: 100%;
+  min-height: 120px;
+  max-height: 120px;
+  display: inline-flex;
+  gap: 15px;
+  overflow: hidden;
+  position: relative;
+}
+
+.playlistHeaderImage {
+  min-width: 120px;
+  min-height: 100px;
+  border-radius: 5px;
+  overflow: hidden;
+  position: relative;
+}
+
+.playlistHeaderInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  flex-grow: 1;
+  height: 100%;
+  gap: 5px;
+  padding: 5px;
+}
+
+.playlistHeaderInfo h1 {
+  font-size: var(--font-size-xl);
+  max-width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.playlistHeaderInfo p {
+  max-width: 100%;
+  overflow: hidden;
+  white-space: wrap;
+  text-overflow: ellipsis;
+}
+
+.playlistHeaderInfo p:nth-of-type(1) {
+  font-size: var(--font-size-s);
+}
+
+.editButton {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 15px;
+  height: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.playlistHeaderInfo input {
+  height: 20px;
+  color: black;
+  padding: 0 5px;
+}
+
+.form {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 250px;
+  background-color: var(--popup-bg);
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+  padding: 10px 15px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.form h3 {
+  font-size: var(--font-size-m);
+}
+
+.formItem {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.formItem label {
+  font-size: var(--font-size-ms);
+}
+
+.formItem div {
+  display: inline-flex;
+  height: 15px;
+  align-items: center;
+  gap: 20px;
+}
+
+.formItem div label {
+  display: inline-flex;
+  height: 15px;
+  align-items: center;
+  gap: 5px;
+}
+
+.formItem input {
+  border: 2px solid grey;
+  border-radius: 5px;
+  color: black;
+  padding: 0 5px;
+}
+
+.formOptions {
+  display: inline-flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.form button {
+  padding: 5px 10px;
+  border-radius: 10px;
+  font-size: var(--font-size-ms);
+}
+
+.form button:nth-of-type(2) {
+  color: white;
+  background-color: green;
+}
+
+@media only screen and (max-width: 450px) {
+  .playlistHeader {
+    width: 100%;
+    min-height: 80px;
+    max-height: 80px;
+  }
+
+  .playlistHeaderImage {
+    min-width: 80px;
+    min-height: 60px;
+  }
+
+  .playlistHeaderInfo {
+    padding: 0px;
+  }
+
+  .playlistHeaderInfo h1 {
+    font-size: var(--font-size-m);
+  }
+
+  .playlistHeaderInfo p {
+    font-size: var(--font-size-ms);
+  }
+
+  .playlistHeaderInfo p:nth-of-type(1) {
+    font-size: var(--font-size-s);
+  }
+}

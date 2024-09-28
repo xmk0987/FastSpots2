@@ -1,0 +1,31 @@
+.container {
+  display: inline-flex;
+  overflow: hidden;
+  position: relative;
+}
+
+.container:hover {
+  cursor: default;
+}
+
+.playlistContainer {
+  padding: 20px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  overflow: hidden;
+  position: relative;
+}
+
+.tracksContainer {
+  flex-grow: 1;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.loading {
+  padding: 10px;
+}

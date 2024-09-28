@@ -1,0 +1,185 @@
+.sidebar {
+  min-width: 300px;
+  width: 300px;
+  height: 100%;
+  background-color: var(--grey);
+  display: flex;
+  flex-direction: column;
+  overflow: scroll;
+  gap: 10px;
+  padding: 20px 20px 0 20px;
+  border-bottom: 1px solid var(--accent-color);
+}
+
+.sortOptions {
+  width: 100%;
+  display: inline-flex;
+  min-height: 20px;
+  gap: 10px;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.sortOptionsSort {
+  flex-grow: 1;
+  display: inline-flex;
+  align-items: center;
+  height: 100%;
+  gap: 10px;
+}
+
+.liked {
+  height: 1px;
+  width: 100%;
+  background-color: var(--hover-grey);
+}
+
+.sortOptions button {
+  height: 15px;
+  width: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+.searchWrapper {
+  width: 15px;
+  height: 15px;
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  transition: 400ms ease-in-out;
+  border-radius: 5px;
+}
+
+.searchWrapper input {
+  position: absolute;
+  border-radius: 5px;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  padding: 5px;
+  margin-left: 20px;
+  outline: none;
+  border: none;
+  font-size: var(--font-size-s);
+  background-color: var(--popup-bg);
+  color: white;
+  overflow: hidden;
+  transition: 400ms ease-in-out;
+}
+
+.searchWrapper:hover {
+  width: 120px;
+}
+
+.searchWrapper:hover input {
+  width: 100px;
+}
+
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+.dropdownContent {
+  display: none;
+  position: absolute;
+  background-color: var(--popup-bg);
+  padding: 5px 10px;
+  min-width: 100px;
+  z-index: 1;
+  font-size: var(--font-size-s);
+  border-radius: 5px;
+}
+
+.dropdown:hover .dropdownContent {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.dropdownContent div {
+  display: inline-flex;
+  justify-content: space-between;
+  padding: 5px;
+}
+
+.dropdownContent div:hover {
+  background-color: var(--hover-grey);
+  cursor: pointer;
+}
+
+.playlists {
+  flex-grow: 1;
+  overflow: scroll;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding-bottom: 20px;
+}
+
+.playlist {
+  width: 100%;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  height: 50px;
+  min-height: 50px;
+  max-height: 50px;
+  padding: 5px;
+  overflow: hidden;
+}
+
+.playlistImage {
+  min-width: 40px;
+  min-height: 40px;
+  border-radius: 5px;
+  overflow: hidden;
+  position: relative;
+}
+
+.playlist:hover {
+  cursor: pointer;
+  background-color: var(--hover-grey);
+}
+
+.playlist p {
+  flex-grow: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.chosenPlaylist {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.selected {
+  position: relative;
+  color: red;
+}
+
+.menu {
+  position: absolute;
+  top: 5px;
+  left: 3px;
+  z-index: 300;
+}
+
+@media only screen and (max-width: 900px) {
+  .sidebar {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 500;
+  }
+}

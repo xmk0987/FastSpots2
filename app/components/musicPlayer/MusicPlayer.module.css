@@ -1,0 +1,174 @@
+.container {
+  min-height: 80px;
+  width: 100%;
+  background-color: var(--grey);
+  color: white;
+  padding: 0 20px;
+  display: inline-flex;
+  align-items: center;
+  gap: 50px;
+}
+
+.container a {
+  color: green;
+  text-decoration: underline;
+}
+
+.container a:hover {
+  opacity: 0.7;
+}
+
+.info {
+  display: inline-flex;
+  height: 100%;
+  align-items: center;
+  gap: 15px;
+  width: 250px;
+}
+
+.infoText {
+  max-width: 250px;
+  overflow: hidden;
+}
+
+.infoText p {
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.infoText p:nth-of-type(2) {
+  font-size: var(--font-size-ms);
+}
+
+.player {
+  flex-grow: 1;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.playerOptions {
+  width: 100%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.playerOptions button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.playerOptions button:not(:disabled):hover svg {
+  fill: var(--accent-color) !important;
+}
+
+.playerProgress {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+}
+
+.playerProgress p {
+  font-size: var(--font-size-s);
+}
+
+.playerProgressBar {
+  width: 80%;
+  max-width: 500px;
+  height: 8px;
+  border-radius: 20px;
+  background-color: rgb(142, 142, 142);
+}
+
+.playerProgressBar:hover,
+.volumeProgress:hover {
+  cursor: pointer;
+}
+
+.progressFilled {
+  height: 100%;
+  background-color: red;
+  border-radius: 20px 0 0 20px;
+  transition: width 0.3s ease;
+}
+
+.volume {
+  width: 200px;
+  display: inline-flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+}
+
+.volumeProgress {
+  width: 100px;
+  height: 8px;
+  background-color: rgb(142, 142, 142);
+  border-radius: 20px;
+}
+
+.volumeFilled {
+  height: 100%;
+  background-color: red;
+  border-radius: 20px 0 0 20px;
+  transition: width 0.3s ease;
+}
+
+@media only screen and (max-width: 850px) {
+  .volume {
+    width: 100px;
+  }
+}
+@media only screen and (max-width: 700px) {
+  .container {
+    gap: 25px;
+  }
+  .info {
+    width: 150px;
+  }
+
+  .infoText {
+    max-width: 150px;
+  }
+  .volume {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  .info img {
+    display: none;
+  }
+
+  .container {
+    gap: 10px;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .player {
+    display: none;
+  }
+
+  .info {
+    width: 100%;
+  }
+
+  .infoText {
+    max-width: 100%;
+  }
+
+  .info img {
+    display: flex;
+  }
+}

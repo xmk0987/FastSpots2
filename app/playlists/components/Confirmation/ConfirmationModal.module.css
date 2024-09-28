@@ -1,0 +1,32 @@
+.confirmDelete {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--popup-bg);
+  padding: 20px;
+  z-index: 40;
+  overflow: hidden;
+  align-items: center;
+  z-index: 1000;
+  border-radius: 5px;
+}
+
+.confirmDeleteOptions {
+  display: inline-flex;
+  gap: 20px;
+}
+
+.confirmDeleteOptions button {
+  padding: 5px 10px;
+  border-radius: 10px;
+  font-size: var(--font-size-ms);
+}
+
+.confirmDeleteOptions button:nth-of-type(2) {
+  color: white;
+  background-color: green;
+}
