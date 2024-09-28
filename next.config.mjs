@@ -7,28 +7,28 @@ const nextConfig = {
       {
         protocol: "https",
         hostname: "i.scdn.co",
-        pathname: "/**", // Allows all paths under the "i.scdn.co" domain.
+        pathname: "/**",
       },
       {
         protocol: "https",
         hostname: "image-cdn-ak.spotifycdn.com",
-        pathname: "/**", // Allows all paths under the "image-cdn-ak.spotifycdn.com" domain.
+        pathname: "/**",
       },
       {
         protocol: "https",
         hostname: "image-cdn-fa.spotifycdn.com",
-        pathname: "/**", // Allows all paths under the "image-cdn-fa.spotifycdn.com" domain.
+        pathname: "/**",
       },
       {
         protocol: "https",
-        hostname: "mosaic.scdn.co", // Allows all paths under the "mosaic.scdn.co" domain.
+        hostname: "mosaic.scdn.co",
         pathname: "/**",
       },
     ],
   },
   webpack: (config) => {
-    // Add alias for '@'
-    config.resolve.alias["@"] = path.resolve(__dirname);
+    // Add alias for '@' using process.cwd() to resolve the project root
+    config.resolve.alias["@"] = path.resolve(process.cwd());
 
     return config;
   },
