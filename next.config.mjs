@@ -1,3 +1,5 @@
+import path from "path";
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
@@ -19,10 +21,16 @@ const nextConfig = {
       },
       {
         protocol: "https",
-        hostname: "mosaic.scdn.co", // Add the new hostname here
-        pathname: "/**", // Allows all paths under the "mosaic.scdn.co" domain.
+        hostname: "mosaic.scdn.co", // Allows all paths under the "mosaic.scdn.co" domain.
+        pathname: "/**",
       },
     ],
+  },
+  webpack: (config) => {
+    // Add alias for '@'
+    config.resolve.alias["@"] = path.resolve(__dirname);
+
+    return config;
   },
 };
 
