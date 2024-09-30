@@ -156,10 +156,23 @@ const TrackList: React.FC<TrackListProps> = ({ user }) => {
               </div>
               <div className={styles.trackInfo}>
                 <div className={styles.trackNameArtist}>
-                  <p>{track.track.name}</p>
-                  <p>{track.track.artists[0].name}</p>
+                  <a href={track.track.external_urls.spotify} target="blank_">
+                    {track.track.name}
+                  </a>
+                  <a
+                    href={track.track.artists[0].external_urls.spotify}
+                    target="blank_"
+                  >
+                    {track.track.artists[0].name}
+                  </a>
                 </div>
-                <p className={styles.trackAlbum}>{track.track.album.name}</p>
+                <a
+                  className={styles.trackAlbum}
+                  href={track.track.album.external_urls.spotify}
+                  target="blank_"
+                >
+                  {track.track.album.name}
+                </a>
 
                 <div className={styles.trackLength}>
                   <p>{formatTime(track.track.duration_ms)}</p>
@@ -220,10 +233,23 @@ const TrackList: React.FC<TrackListProps> = ({ user }) => {
               </div>
               <div className={styles.trackInfo}>
                 <div className={styles.trackNameArtist}>
-                  <p>{track.track.name}</p>
-                  <p>{track.track.artists[0].name}</p>
+                  <a href={track.track.external_urls.spotify} target="blank_">
+                    {track.track.name}
+                  </a>
+                  <a
+                    href={track.track.artists[0].external_urls.spotify}
+                    target="blank_"
+                  >
+                    {track.track.artists[0].name}
+                  </a>
                 </div>
-                <p className={styles.trackAlbum}>{track.track.album.name}</p>
+                <a
+                  className={styles.trackAlbum}
+                  href={track.track.album.external_urls.spotify}
+                  target="blank_"
+                >
+                  {track.track.album.name}
+                </a>
 
                 <div className={styles.trackLength}>
                   <p>{formatTime(track.track.duration_ms)}</p>

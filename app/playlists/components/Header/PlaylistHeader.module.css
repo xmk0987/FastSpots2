@@ -49,8 +49,15 @@
   text-overflow: ellipsis;
 }
 
-.playlistHeaderInfo p:nth-of-type(1) {
+.playlistHeaderInfoSmall {
   font-size: var(--font-size-s);
+}
+
+.openOnSpotify {
+  font-size: var(--font-size-s);
+  position: absolute;
+  bottom: 0;
+  right: 10px;
 }
 
 .editButton {

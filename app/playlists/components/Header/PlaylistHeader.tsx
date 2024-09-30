@@ -81,11 +81,20 @@ const PlaylistHeader = () => {
         <div className={styles.playlistHeaderInfo}>
           <h1>{selectedPlaylist ? selectedPlaylist.name : "Liked Tracks"}</h1>
           {selectedPlaylist ? (
-            <p>
+            <p className={styles.playlistHeaderInfoSmall}>
               {selectedPlaylist.public ? "Public playlist" : "Private playlist"}
             </p>
           ) : null}
           {selectedPlaylist ? <p>{selectedPlaylist.description}</p> : null}
+          {selectedPlaylist ? (
+            <a
+              className={styles.openOnSpotify}
+              href={selectedPlaylist?.external_urls.spotify}
+              target="blank_"
+            >
+              Open on Spotify
+            </a>
+          ) : null}
         </div>
       </div>
       {editMode ? (
