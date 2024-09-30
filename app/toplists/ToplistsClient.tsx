@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
 
 import React, { useEffect, useState } from "react";
@@ -5,7 +6,6 @@ import { useSelector, useDispatch } from "react-redux";
 import { RootState, AppDispatch } from "@/store";
 import styles from "./Toplists.module.css";
 import { getImageBrightness } from "./helpers/imageBrightness";
-import Image from "next/image";
 import { SpotifyArtist, SpotifyTrack } from "@/assets/interfaces";
 import placeholder from "@/assets/images/placeholder.jpg";
 import PlayIcon from "@/assets/icons/PlayIcon";
@@ -244,15 +244,13 @@ const ToplistsClient: React.FC<ToplistsClientProps> = ({
                     )}
                   </div>
                   <div className={styles.listItemImage}>
-                    <Image
+                    <img
                       src={
                         track.album.images?.length > 0
                           ? track.album.images[0].url
-                          : placeholder
+                          : placeholder.src
                       }
                       alt={track.name}
-                      fill={true}
-                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     />
                   </div>
                   <div className={styles.trackInfo}>
@@ -322,16 +320,14 @@ const ToplistsClient: React.FC<ToplistsClientProps> = ({
                     <p>{index + 1}.</p>
                   </div>
                   <div className={styles.listItemImage}>
-                    <Image
+                    <img
                       src={
                         artist.images?.length > 0
                           ? artist.images[0].url
-                          : placeholder
+                          : placeholder.src
                       }
                       alt={artist.name}
-                      fill={true}
-                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                    />
+                    ></img>
                   </div>
                   <div className={styles.trackInfo}>
                     <p>{artist.name}</p>

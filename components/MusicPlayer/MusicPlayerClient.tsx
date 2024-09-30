@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import React, { useCallback, useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { RootState, AppDispatch } from "@/store";
@@ -13,7 +14,6 @@ import {
   playSongByURI,
 } from "@/redux/musicPlayerSlice";
 import styles from "./MusicPlayer.module.css";
-import Image from "next/image";
 import PlayIcon from "@/assets/icons/PlayIcon";
 import StopIcon from "@/assets/icons/StopIcon";
 import SkipNextIcon from "@/assets/icons/SkipNextIcon";
@@ -24,6 +24,8 @@ import RepeatIcon from "@/assets/icons/RepeatIcon";
 import VolumeIcon from "@/assets/icons/VolumeIcon";
 import MuteIcon from "@/assets/icons/MuteIcon";
 import { SpotifyPlaylistTrack } from "@/assets/interfaces";
+import placeholder from "../../assets/images/placeholder.jpg";
+import SpotifyFullLogo from "../../assets/images/SpotifyFullLogo.png";
 
 const MusicPlayerClient = () => {
   const dispatch: AppDispatch = useDispatch();
@@ -172,8 +174,6 @@ const MusicPlayerClient = () => {
 
       const previousTrackURI = sortedTracks[previousIndex]?.track.uri;
 
-      console.log(previousTrackURI);
-
       if (previousTrackURI) {
         playSong(previousTrackURI);
       }
@@ -193,12 +193,10 @@ const MusicPlayerClient = () => {
       {playerData ? (
         <>
           <div className={styles.info}>
-            <Image
-              src={playerData?.item?.album?.images[0].url}
-              width={40}
-              height={40}
+            <img
+              src={playerData?.item?.album?.images[0].url || placeholder.src}
               alt="Album cover"
-            />
+            ></img>
             <div className={styles.infoText}>
               <p>{playerData.item?.name}</p>
               <p>{playerData.item?.artists[0]?.name}</p>
@@ -261,11 +259,16 @@ const MusicPlayerClient = () => {
           </div>
         </>
       ) : (
-        <button onClick={handleSpotifyOpen} className={styles.openSpotify}>
-          {isFetching
-            ? "Fetching Player Data..."
-            : "Open Spotify & start playing a song then refresh"}
-        </button>
+        <div className={styles.openSpotify}>
+          <button onClick={handleSpotifyOpen}>
+            {isFetching
+              ? "Fetching Player Data..."
+              : "Open Spotify & start playing a song then refresh"}
+          </button>
+          <button onClick={handleSpotifyOpen}>
+            <img src={SpotifyFullLogo.src} alt="Spotify logo"></img>
+          </button>
+        </div>
       )}
     </>
   );

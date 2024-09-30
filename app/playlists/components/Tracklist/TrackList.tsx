@@ -1,7 +1,7 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
 import React, { useEffect, useState, useRef, useCallback } from "react";
 import styles from "./TrackList.module.css";
-import Image from "next/image";
 import PlayIcon from "@/assets/icons/PlayIcon";
 import RemoveIcon from "@/assets/icons/RemoveIcon";
 import CheckedBoxIcon from "@/assets/icons/CheckedBoxIcon";
@@ -44,12 +44,11 @@ const TrackList: React.FC<TrackListProps> = ({ user }) => {
     );
   }, [dispatch, nextTracksUri, selectedPlaylist]);
 
-  /*   useEffect(() => {
-    if (!selectedPlaylist && nextTracksUri) {
+  useEffect(() => {
+    if (nextTracksUri) {
       fetchNextData();
     }
   }, [fetchNextData, nextTracksUri, selectedPlaylist]);
- */
 
   const observer = useRef<IntersectionObserver | null>(null);
 
@@ -76,7 +75,7 @@ const TrackList: React.FC<TrackListProps> = ({ user }) => {
     if (!selectedPlaylist && !nextTracksUri && tracks.length === 0) {
       dispatch(selectPlaylistAndFetchTracks(null));
     }
-  }, []);
+  }, [dispatch, nextTracksUri, selectedPlaylist, tracks.length]);
 
   const [hoveredTrackIndex, setHoveredTrackIndex] = useState<number | null>(
     null
@@ -150,18 +149,18 @@ const TrackList: React.FC<TrackListProps> = ({ user }) => {
                 )}
               </div>
               <div className={styles.trackImage}>
-                <Image
-                  fill={true}
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                <img
                   alt="Track cover"
                   src={track.track.album.images[0]?.url || "/placeholder.jpg"}
-                />
+                ></img>
               </div>
               <div className={styles.trackInfo}>
                 <div className={styles.trackNameArtist}>
                   <p>{track.track.name}</p>
                   <p>{track.track.artists[0].name}</p>
                 </div>
+                <p className={styles.trackAlbum}>{track.track.album.name}</p>
+
                 <div className={styles.trackLength}>
                   <p>{formatTime(track.track.duration_ms)}</p>
                 </div>
@@ -214,9 +213,7 @@ const TrackList: React.FC<TrackListProps> = ({ user }) => {
                 )}
               </div>
               <div className={styles.trackImage}>
-                <Image
-                  fill={true}
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                <img
                   alt="Track cover"
                   src={track.track.album.images[0]?.url || "/placeholder.jpg"}
                 />
@@ -226,6 +223,8 @@ const TrackList: React.FC<TrackListProps> = ({ user }) => {
                   <p>{track.track.name}</p>
                   <p>{track.track.artists[0].name}</p>
                 </div>
+                <p className={styles.trackAlbum}>{track.track.album.name}</p>
+
                 <div className={styles.trackLength}>
                   <p>{formatTime(track.track.duration_ms)}</p>
                 </div>

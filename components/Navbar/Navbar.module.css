@@ -1,11 +1,24 @@
 .navbarContainer {
   width: 100%;
   min-height: var(--navbar-height);
-  background:var(--linear);
+  background: var(--linear);
   display: inline-flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 10px;
+}
+
+.logo {
+  height: 100%;
+  flex-grow: 1;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo img {
+  width: 35px;
+  height: 35px;
 }
 
 .navbarContainer ul {

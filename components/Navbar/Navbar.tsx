@@ -1,9 +1,11 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
 
 import React from "react";
 import styles from "./Navbar.module.css";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import SpotifyLogo from "../../assets/images/SpotifyLogo.png";
 
 const Navbar = () => {
   const pathname = usePathname();
@@ -14,7 +16,10 @@ const Navbar = () => {
 
   return (
     <nav className={styles.navbarContainer}>
-      <h3 className="text-2xl">FASTSPOTS</h3>
+      <div className={styles.logo}>
+        <img src={SpotifyLogo.src} alt="Spotify logo"></img>
+        <h3 className="text-2xl">FASTSPOTS</h3>
+      </div>
       {isHome() ? null : (
         <ul>
           <li>

@@ -44,6 +44,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: space-between;
+  gap: 10px;
 }
 
 .trackNameArtist {
@@ -51,7 +52,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  max-width: 200px;
+  width: 200px;
 }
 
 .trackNameArtist p {
@@ -65,6 +66,16 @@
   font-size: var(--font-size-ms);
 }
 
+.trackAlbum {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  width: 250px;
+  text-align: start;
+  color: white;
+  font-size: var(--font-size-ms);
+}
+
 .trackOptions {
   display: inline-flex;
   gap: 20px;
@@ -75,6 +86,12 @@
 
 .trackOptions button {
   position: relative;
+}
+
+@media only screen and (max-width: 1100px) {
+  .trackAlbum {
+    display: none;
+  }
 }
 
 @media only screen and (max-width: 550px) {

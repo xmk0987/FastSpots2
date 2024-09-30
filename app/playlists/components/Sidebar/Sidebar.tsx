@@ -1,8 +1,8 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
 
 import React, { useEffect, useState } from "react";
 import styles from "./Sidebar.module.css";
-import Image from "next/image";
 import SearchIcon from "@/assets/icons/SearchIcon";
 import SortIcon from "@/assets/icons/SortIcon";
 import ArrowDownIcon from "@/assets/icons/ArrowDownIcon";
@@ -122,12 +122,7 @@ const Sidebar: React.FC<SidebarProps> = ({ user }) => {
             onClick={() => selectPlaylist(null)}
           >
             <div className={styles.playlistImage}>
-              <Image
-                src={placeholder}
-                alt={"Liked Tracks"}
-                fill={true}
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-              />
+              <img src={placeholder.src} alt={"Liked Tracks"}></img>
             </div>
             <p>Liked Tracks</p>
           </div>
@@ -144,15 +139,13 @@ const Sidebar: React.FC<SidebarProps> = ({ user }) => {
                   onClick={() => selectPlaylist(playlist)}
                 >
                   <div className={styles.playlistImage}>
-                    <Image
+                    <img
                       src={
                         playlist.images?.length > 0
                           ? playlist.images[0]?.url
-                          : placeholder
+                          : placeholder.src
                       }
                       alt={playlist.name}
-                      fill={true}
-                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     />
                   </div>
                   <p>{playlist.name}</p>

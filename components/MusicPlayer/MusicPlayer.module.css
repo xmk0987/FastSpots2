@@ -26,6 +26,13 @@
   width: 250px;
 }
 
+.info img {
+  width: 40px;
+  height: 40px;
+  min-width: 40px;
+  min-height: 40px;
+}
+
 .infoText {
   max-width: 250px;
   overflow: hidden;
@@ -126,6 +133,16 @@
 
 .openSpotify {
   font-size: var(--font-size-ms);
+  height: 100%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  width: 100%;
+}
+
+.openSpotify img {
+  max-height: 35px;
 }
 
 @media only screen and (max-width: 850px) {

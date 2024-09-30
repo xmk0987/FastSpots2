@@ -43,7 +43,7 @@ const PlaylistsClient: React.FC<PageProps> = ({ user }) => {
     if (!playlists || playlists.length === 0) {
       dispatch(fetchPlaylists());
     }
-  }, [dispatch]);
+  }, [dispatch, playlists]);
 
   return (
     <main className={styles.container}>

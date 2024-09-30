@@ -37,7 +37,7 @@ const CreatePlaylist: React.FC<CreatePlaylistProps> = ({
       {showCreatePlaylist ? (
         <>
           <form className={styles.form} onSubmit={handleCreatePlaylist}>
-            <h3>Edit Playlist</h3>
+            <h3>Create Playlist</h3>
             <div className={styles.formItem}>
               <label>Name:</label>
               <input value={name} onChange={(e) => setName(e.target.value)} />

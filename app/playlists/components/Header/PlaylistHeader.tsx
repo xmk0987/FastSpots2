@@ -1,7 +1,7 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
 
 import React, { useEffect, useState } from "react";
-import Image from "next/image";
 import styles from "./PlaylistHeader.module.css";
 import placeholder from "@/assets/images/placeholder.jpg";
 import { useSelector, useDispatch } from "react-redux";
@@ -69,16 +69,13 @@ const PlaylistHeader = () => {
           </button>
         ) : null}
         <div className={styles.playlistHeaderImage}>
-          <Image
+          <img
             src={
               selectedPlaylist && selectedPlaylist.images?.length > 0
                 ? selectedPlaylist.images[0].url
-                : placeholder
+                : placeholder.src
             }
             alt="Playlist cover"
-            priority
-            fill={true}
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           />
         </div>
         <div className={styles.playlistHeaderInfo}>
