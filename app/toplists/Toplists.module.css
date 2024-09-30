@@ -146,18 +146,18 @@
   text-overflow: ellipsis;
 }
 
-.trackInfo p {
+.trackInfo a {
   flex-grow: 1;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
 }
 
-.trackInfo p:nth-of-type(1) {
+.trackInfo a:nth-of-type(1) {
   font-size: var(--font-size-ms);
 }
 
-.trackInfo p:nth-of-type(2) {
+.trackInfo a:nth-of-type(2) {
   font-size: var(--font-size-s);
 }
 

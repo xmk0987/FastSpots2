@@ -254,8 +254,17 @@ const ToplistsClient: React.FC<ToplistsClientProps> = ({
                     />
                   </div>
                   <div className={styles.trackInfo}>
-                    <p className={styles.trackName}>{track.name}</p>
-                    <p> {track.album.artists[0].name}</p>
+                    <a
+                      href={track.external_urls.spotify}
+                      target="blank_"
+                      className={styles.trackName}
+                    >
+                      {track.name}
+                    </a>
+                    <a href={track.album.external_urls.spotify} target="blank_">
+                      {" "}
+                      {track.album.artists[0].name}
+                    </a>
                   </div>
                 </div>
               ))
@@ -330,7 +339,9 @@ const ToplistsClient: React.FC<ToplistsClientProps> = ({
                     ></img>
                   </div>
                   <div className={styles.trackInfo}>
-                    <p>{artist.name}</p>
+                    <a target="blank_" href={artist.external_urls.spotify}>
+                      {artist.name}
+                    </a>
                   </div>
                 </div>
               ))
