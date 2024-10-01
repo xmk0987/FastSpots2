@@ -6,7 +6,6 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
 
   const scope = [
     "user-read-private",
-    "user-read-email",
     "streaming",
     "user-read-playback-state",
     "user-modify-playback-state",
@@ -14,11 +13,8 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
     "playlist-read-private",
     "playlist-read-collaborative",
     "playlist-modify-private",
-    "ugc-image-upload",
     "playlist-modify-public",
     "user-top-read",
-    "user-read-recently-played",
-    "user-library-modify",
     "user-library-read",
   ].join(" ");
 
